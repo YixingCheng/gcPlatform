@@ -1,13 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ethan.java.spring</groupId>
   <artifactId>51card</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>51card</name>
   <packaging>war</packaging>
   
     <properties>
 
 		<!-- Generic properties -->
-		<java.version>1.6</java.version>
+		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
@@ -22,6 +24,9 @@
 
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.1.Final</hibernate.version>
+
+        <!-- strut2 -->
+        <strut2.version>2.3.1.2</strut2.version>
 
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
@@ -67,6 +72,13 @@
 			<version>${spring-framework.version}</version>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+
 		<!-- Logging with SLF4J & LogBack -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -88,10 +100,18 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
+        <!-- Struts2 -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-			<version>2.3.1.2</version>
+			<version>${strut2.version}</version>
+		</dependency>
+
+		<!-- Struts 2 + Spring plugins -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-spring-plugin</artifactId>
+			<version>2.1.8</version>
 		</dependency>
 		
 		<!-- Test Artifacts -->
@@ -107,7 +127,51 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- MySQL database driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.9</version>
+		</dependency>
 
-	</dependencies>	
-	<groupId>com.ethan.java.spring</groupId>
+	</dependencies>
+	
+	<build>
+        <finalName>calories-tracker</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <path>/</path>
+                    <httpsPort>8443</httpsPort>
+                    <keystoreFile>${basedir}/other/keystore.jks</keystoreFile>
+                    <keystorePass>secret</keystorePass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
