@@ -5,6 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>51card</name>
   <packaging>war</packaging>
+  <description>SSH2 web app for gift cards trading</description>
+  <url>https://github.com/YixingCheng/51card</url>
   
     <properties>
 
@@ -25,8 +27,8 @@
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.1.Final</hibernate.version>
 
-        <!-- strut2 -->
-        <strut2.version>2.3.1.2</strut2.version>
+        <!-- struts2 -->
+        <struts2.version>2.3.16.1</struts2.version>
 
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
@@ -104,7 +106,7 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-			<version>${strut2.version}</version>
+			<version>${struts2.version}</version>
 		</dependency>
 
 		<!-- Struts 2 + Spring plugins -->
@@ -138,7 +140,7 @@
 	</dependencies>
 	
 	<build>
-        <finalName>calories-tracker</finalName>
+        <finalName>51card</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
