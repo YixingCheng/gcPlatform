@@ -71,3 +71,34 @@ public class ProductInfo implements Serializable {
 	public void setSexrequest(Sex sexrequest) {
 		this.sexrequest = sexrequest;
 	}
+	public Boolean getCommend() {
+		return commend;
+	}
+	public void setCommend(Boolean commend) {
+		this.commend = commend;
+	}
+	public Integer getClickcount() {
+		return clickcount;
+	}
+	public void setClickcount(Integer clickcount) {
+		this.clickcount = clickcount;
+	}
+	public Integer getSellCount() {
+		return sellCount;
+	}
+	public void setSellCount(Integer sellCount) {
+		this.sellCount = sellCount;
+	}
+	public ProductCategory getCategory() {
+		return category;
+	}
+	public void setCategory(ProductCategory category) {
+		this.category = category;
+	}
+	public UploadFile getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(UploadFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+}
