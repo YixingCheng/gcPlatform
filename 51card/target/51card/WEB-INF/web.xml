@@ -11,7 +11,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 		- Applied by ContextLoaderListener. -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring/application-config.xml</param-value>
+		<param-value>classpath:application-config.xml</param-value>
 	</context-param>
 
 	<listener>
@@ -63,7 +63,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	</filter-mapping>
 
 	<!-- - Servlet that dispatches request to registered handlers (Controller 
-		implementations). -->
+		implementations).  -->
 	<servlet>
 		<servlet-name>dispatcherServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -76,15 +76,16 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 
 	<servlet-mapping>
 		<servlet-name>dispatcherServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
+	
 	
 	<!-- session timeout -->
 	<session-config>
 		<session-timeout>60</session-timeout>
 	</session-config>
 	
-	<!-- config error page -->
+	<!-- config error page 
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error/404.jsp</location>
@@ -93,9 +94,10 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 		<error-code>500</error-code>
 		<location>/error/404.jsp</location>
 	</error-page>
-
+    -->
+    
     <!-- default homepage -->
     <welcome-file-list>
-		<welcome-file>/index.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>

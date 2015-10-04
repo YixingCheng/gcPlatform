@@ -10,7 +10,7 @@
 		<!-- 数据库连接信息 -->
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_shop</property>
 		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">111</property>
+		<property name="hibernate.connection.password">538552Cyx</property>
 		<!-- 打印SQL语句 -->
 		<property name="hibernate.show_sql">true</property>
 		<!-- 不格式化SQL语句 -->
@@ -26,14 +26,14 @@
 		<property name="hibernate.c3p0.acquire_increment">2</property>
 		<property name="hibernate.c3p0.validate">true</property>		
 		<!-- 映射文件 -->
-		<mapping resource="com/lyq/model/user/User.hbm.xml"/>
-		<mapping resource="com/lyq/model/user/Customer.hbm.xml"/>
+		<mapping resource="com/ethan/java/spring/cards/model/user/User.hbm.xml"/>
+		<mapping resource="com/ethan/java/spring/cards/model/user/Customer.hbm.xml"/>
 		
-		<mapping resource="com/lyq/model/product/ProductInfo.hbm.xml"/>
-		<mapping resource="com/lyq/model/product/ProductCategory.hbm.xml"/>
-		<mapping resource="com/lyq/model/product/UploadFile.hbm.xml"/>
+		<mapping resource="com/ethan/java/spring/cards/model/product/ProductInfo.hbm.xml"/>
+		<mapping resource="com/ethan/java/spring/cards/model/product/ProductCategory.hbm.xml"/>
+		<mapping resource="com/ethan/java/spring/cards/model/product/UploadFile.hbm.xml"/>
 		
-		<mapping resource="com/lyq/model/order/Order.hbm.xml"/>
-		<mapping resource="com/lyq/model/order/OrderItem.hbm.xml"/>
+		<mapping resource="com/ethan/java/spring/cards/model/order/Order.hbm.xml"/>
+		<mapping resource="com/ethan/java/spring/cards/model/order/OrderItem.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

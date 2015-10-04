@@ -8,7 +8,7 @@
 		<!-- 配置拦截器 -->
 		<interceptors>
 			<!-- 验证用户登录的拦截器 -->
-			<interceptor name="loginInterceptor" class="com.lyq.action.interceptor.CustomerLoginInteceptor"/>
+			<interceptor name="loginInterceptor" class="com.ethan.java.spring.cards.action.interceptor.CustomerLoginInteceptor"/>
 			<interceptor-stack name="customerDefaultStack">
 				<interceptor-ref name="loginInterceptor"/>
     			<interceptor-ref name="defaultStack"/>
