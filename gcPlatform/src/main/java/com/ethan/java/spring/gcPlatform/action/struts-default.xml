@@ -5,18 +5,24 @@
 <struts>
 	<!-- OGNL可以使用静态方法 -->
 	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	
 	<package name="default" extends="struts-default">
-
+	<!--
+	<default-class-ref class="com.opensymphony.xwork2.ActionSupport" />
+	  -->
 		<global-results>
-			<result name="home">/home.jsp</result>
-			<result name="logout">/logout.jsp</result>
+			<result name="home">/WEB-INF/Home.jsp</result>
+			<result name="logout">/WEB-INF/Logout.jsp</result>
 		</global-results>
 
-		<action name="*Link" method="{1}">
-			<result name="add">/add.jsp</result>
-			<result name="delete">/delete.jsp</result>
+        <global-exception-mappings>
+			<exception-mapping result="error" exception="com.ethan.java.spring.gcPlatform.util.AppException"></exception-mapping>
+		</global-exception-mappings>
+		
+		<action name="Link_*" method="{1}" class="com.ethan.java.spring.gcPlatform.action.LinkAction">
+			<result name="add">/WEB-INF/Add.jsp</result>
+			<result name="delete">/WEB-INF/Delete.jsp</result>
 		</action>
-
 	</package>
 
 </struts>
