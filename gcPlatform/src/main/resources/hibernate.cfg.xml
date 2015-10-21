@@ -27,8 +27,8 @@
 		<property name="hibernate.c3p0.validate">true</property>		
 		<!-- 映射文件 -->
 		
-		<mapping resource="com/ethan/java/spring/gcPlatform/model/user/Admin.hbm.xml"/>
-		<mapping resource="com/ethan/java/spring/gcPlatform/model/user/Customer.hbm.xml"/>
+		<mapping resource="hibernate_mapping/Admin.hbm.xml"/>
+		<mapping resource="hibernate_mapping/Customer.hbm.xml"/>
 		<!--
 		<mapping resource="com/ethan/java/spring/cards/model/product/ProductInfo.hbm.xml"/>
 		<mapping resource="com/ethan/java/spring/cards/model/product/ProductCategory.hbm.xml"/>

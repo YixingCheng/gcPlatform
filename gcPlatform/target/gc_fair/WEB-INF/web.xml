@@ -19,6 +19,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	</listener>
 
 	<!-- OpenSessionInViewFilter过滤器 -->
+	<!--
 	<filter>
 		<filter-name>openSessionInViewFilter</filter-name>
 		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
@@ -27,6 +28,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 		<filter-name>openSessionInViewFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+    -->
 
 	<!-- Struts2配置 -->
 	<filter>
