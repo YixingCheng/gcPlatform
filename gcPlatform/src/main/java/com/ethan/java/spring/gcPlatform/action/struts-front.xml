@@ -3,5 +3,11 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
+	<!-- 前台登录 -->
+	<package name="gcPlatform.front" extends="gcPlatform-default">
+		<action name="index" class="com.ethan.java.spring.gcPlatform.action.IndexAction">
+            <result name="success">/WEB-INF/Home.jsp</result>
+        </action>
+	</package>
 	
 </struts>

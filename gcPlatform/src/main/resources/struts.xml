@@ -6,7 +6,7 @@
     <!-- 前后台公共视图的映射 -->
 	<include file="com/ethan/java/spring/gcPlatform/action/struts-default.xml" />
 	<!-- 后台管理的Struts2配置文件 -->
-	<include file="com/ethan/java/spring/gcPlatform/struts-admin.xml" />
+	<include file="com/ethan/java/spring/gcPlatform/action/struts-admin.xml" />
 	<!-- 前台台管理的Struts2配置文件 -->
 	<include file="com/ethan/java/spring/gcPlatform/action/struts-front.xml" />
 </struts>

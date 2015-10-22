@@ -6,12 +6,15 @@
 	<!-- OGNL可以使用静态方法 -->
 	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
 	
-	<package name="default" extends="struts-default">
+	<package name="gcPlatform-default" abstract="true" extends="struts-default">
 	<!--
 	<default-class-ref class="com.opensymphony.xwork2.ActionSupport" />
 	  -->
 		<global-results>
-			<result name="home">/WEB-INF/Home.jsp</result>
+		    <!-- 程序主页面 -->
+            <result name="index" type="redirectAction">index</result>
+            
+			
 			<result name="logout">/WEB-INF/Logout.jsp</result>
 		</global-results>
 
@@ -19,10 +22,7 @@
 			<exception-mapping result="error" exception="com.ethan.java.spring.gcPlatform.util.AppException"></exception-mapping>
 		</global-exception-mappings>
 		
-		<action name="Link_*" method="{1}" class="com.ethan.java.spring.gcPlatform.action.LinkAction">
-			<result name="add">/WEB-INF/Add.jsp</result>
-			<result name="delete">/WEB-INF/Delete.jsp</result>
-		</action>
+		
 	</package>
 
 </struts>
