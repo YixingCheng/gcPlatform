@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 @Scope("prototype")
 @Controller("indexAction")
 @Results({
-	  @Result(name="success", location="/WEB-INF/pages/index.jsp")
+	  @Result(name="success", location="/WEB-INF/pages/login.jsp")
 	})
 public class IndexAction extends BaseAction {
 	private static final long serialVersionUID = 1L;
