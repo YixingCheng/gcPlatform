@@ -17,6 +17,7 @@ public class CardCategory implements Serializable{
 	//private Set<ProductCategory> children;// 子产品类别
 	//private ProductCategory parent;// 父类别
 	private Set<CardsInfo> cardsinfo = new TreeSet<CardsInfo>();// 包含商品
+	
 	public Integer getId() {
 		return id;
 	}

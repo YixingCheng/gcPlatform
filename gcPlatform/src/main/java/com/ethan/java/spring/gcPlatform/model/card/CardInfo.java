@@ -13,8 +13,8 @@ public class CardInfo implements Serializable{
 	private Integer id;// 商品编号
 	private Float facevalue;  //facevalue
 	private Float price; //selling price
-	private CardsInfo cards;
-	private CardCategory category;
+	private CardsInfo cardsinfo;
+	//private CardCategory category;
 	private Date createTime = new Date();//  create time
 	private Date sellTime;
 	private String owner;
@@ -38,16 +38,10 @@ public class CardInfo implements Serializable{
 		this.price = price;
 	}
 	public CardsInfo getCards() {
-		return cards;
+		return cardsinfo;
 	}
 	public void setCards(CardsInfo cards) {
-		this.cards = cards;
-	}
-	public CardCategory getCategory() {
-		return category;
-	}
-	public void setCategory(CardCategory category) {
-		this.category = category;
+		this.cardsinfo = cards;
 	}
 	public Date getCreateTime() {
 		return createTime;
