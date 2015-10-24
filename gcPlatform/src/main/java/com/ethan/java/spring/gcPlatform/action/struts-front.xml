@@ -5,8 +5,14 @@
 <struts>
 	<!-- 前台登录 -->
 	<package name="gcPlatform.front" extends="gcPlatform-default">
-		<action name="index" class="com.ethan.java.spring.gcPlatform.action.IndexAction">
+	    <action name="customer" class="com.ethan.java.spring.gcPlatform.action.user.CustomerAction">
+            <result name="success">/WEB-INF/pages/index.jsp</result>
+        </action>
+		<action name="index_*" method="{1}" class="com.ethan.java.spring.gcPlatform.action.IndexAction">
             <result name="success">/WEB-INF/Home.jsp</result>
+            <result name="login_error">
+            	<param name="location">/WEB-INF/pages/login.jsp?error=123</param>
+            </result>
         </action>
 	</package>
 	

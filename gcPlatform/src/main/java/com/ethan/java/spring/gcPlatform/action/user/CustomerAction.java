@@ -1,5 +1,10 @@
 package com.ethan.java.spring.gcPlatform.action.user;
 
+import java.util.Collection;
+import java.util.Iterator;
+
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -7,19 +12,41 @@ import com.ethan.java.spring.gcPlatform.action.BaseAction;
 import com.ethan.java.spring.gcPlatform.model.user.Customer;
 import com.ethan.java.spring.gcPlatform.util.AppException;
 import com.opensymphony.xwork2.ModelDriven;
+
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 /**
  * 顾客Action
  * @author Yixing Cheng
  */
 @Scope("prototype")
 @Controller("customerAction")
+@Results({
+	  @Result(name="success", location="/WEB-INF/pages/index.jsp")
+	})
 public class CustomerAction extends BaseAction implements ModelDriven<Customer>{
 	private static final long serialVersionUID = 1L;
 	
 	public String login() throws Exception{
 		return CUSTOMER_LOGIN;
 	}
-
+	
+	@Override
+    public String execute() {
+ 
+        //Principal principal = ServletActionContext.getRequest().getUserPrincipal();
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        System.out.println("username: " + userDetails.getUsername());
+        System.out.println("password: " + userDetails.getPassword());
+        Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>) userDetails.getAuthorities();
+        for (Iterator it = authorities.iterator(); it.hasNext();) {
+            SimpleGrantedAuthority authority = (SimpleGrantedAuthority) it.next();
+            System.out.println("Role: " + authority.getAuthority());
+        }
+        return SUCCESS;
+    }
+	
 	/**
 	 * 用户注册
 	 * @return

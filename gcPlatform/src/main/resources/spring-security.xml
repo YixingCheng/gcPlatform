@@ -7,17 +7,15 @@
     http://www.springframework.org/schema/security/spring-security-3.2.xsd">
   
     <http auto-config="true">
-        <intercept-url pattern="/index" access="ROLE_CUSTOMER" />
-        <!--  
-        <intercept-url pattern="/customer" access="ROLE_CUSTOMER" />
-        --> 
+        <intercept-url pattern="/customer*" access="ROLE_CUSTOMER" />
+          
          
         <access-denied-handler error-page="/WEB-INF/pages/403.jsp" />
          
         <form-login
-            login-page="/login"
-            default-target-url="/index"
-            authentication-failure-url="/login?error"
+            login-page="/index.html"
+            default-target-url="/customer.html"
+            authentication-failure-url="/index_loginerror.html"
             username-parameter="username"
             password-parameter="password" />
         <logout logout-success-url="/login?logout" />
@@ -28,9 +26,9 @@
         <authentication-provider>
             <user-service>
                 <user name="ddkr" password="1986" authorities="ROLE_CUSTOMER" />
-                <!--  
-                <user name="ram" password="abc$123" authorities="ROLE_USER" />
-                -->
+                
+                <user name="ram" password="abc$123" authorities="ROLE_ADMIN" />
+               
             </user-service>
         </authentication-provider>
     </authentication-manager>

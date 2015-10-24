@@ -44,8 +44,7 @@
 					<s:if test="%{#parameters.error != null}">
 						<div style="color: red">Invalid User</div>
 					</s:if>
-					<s:form name="loginForm" class="form-login" action="j_spring_security_check"
-						method="post">
+					<s:form name="loginForm" cssClass="form-login" action="j_spring_security_check" method="POST" >  
 						<s:textfield name="username" label="Username" id="userName"
 						cssClass="form-control input-sm chat-input" placeholder="username"/>
 						<br/>
@@ -64,7 +63,8 @@
 								<s:submit value="Login" cssClass="btn btn-primary btn-md"/> <i class="fa fa-sign-in"></i>
 							</span>
 						</div>
-					</s:form>
+					 </s:form> 
+					
 				</div>
 		</div>
     </div>

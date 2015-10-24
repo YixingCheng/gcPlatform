@@ -14,8 +14,6 @@
 		    <!-- 程序主页面 -->
             <result name="index" type="redirectAction">index</result>
             
-			
-			<result name="logout">/WEB-INF/Logout.jsp</result>
 		</global-results>
 
         <global-exception-mappings>
