@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +12,8 @@ import com.ethan.java.spring.gcPlatform.dao.DaoSupport;
 import com.ethan.java.spring.gcPlatform.model.PageModel;
 import com.ethan.java.spring.gcPlatform.model.card.CardsInfo;
 
+@Repository("cardsDao")
+@Transactional
 public class CardsDaoImpl extends DaoSupport<CardsInfo> implements CardsDao{
 	
 	/**

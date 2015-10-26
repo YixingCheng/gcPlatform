@@ -4,10 +4,15 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.ethan.java.spring.gcPlatform.dao.DaoSupport;
 import com.ethan.java.spring.gcPlatform.model.PageModel;
 import com.ethan.java.spring.gcPlatform.model.card.CardInfo;
 
+@Repository("cardDao")
+@Transactional
 public class CardDaoImpl extends DaoSupport<CardInfo> implements CardDao {
 
 	@Override

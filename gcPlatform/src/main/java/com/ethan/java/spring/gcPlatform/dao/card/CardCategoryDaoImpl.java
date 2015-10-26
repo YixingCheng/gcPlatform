@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.ethan.java.spring.gcPlatform.dao.DaoSupport;
 import com.ethan.java.spring.gcPlatform.model.card.CardCategory;
 
-@Repository("productCategoryDao")
+@Repository("cardCategoryDao")
 public class CardCategoryDaoImpl extends DaoSupport<CardCategory> implements
 		CardCategoryDao {
 
