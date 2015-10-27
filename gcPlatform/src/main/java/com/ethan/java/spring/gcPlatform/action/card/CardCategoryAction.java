@@ -3,7 +3,6 @@ package com.ethan.java.spring.gcPlatform.action.card;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-
 import com.ethan.java.spring.gcPlatform.action.BaseAction;
 import com.ethan.java.spring.gcPlatform.model.PageModel;
 import com.ethan.java.spring.gcPlatform.model.card.CardCategory;
@@ -49,5 +48,71 @@ public class CardCategoryAction extends BaseAction implements ModelDriven<CardCa
 		return list();//返回类别列表的查找方法
 	}
 	
+	/**
+	 * 查询类别
+	 * @return
+	 * @throws Exception
+	 */
+	public String list() throws Exception{
+		Object[] params = null;//对象数组为空
+		String where;//查询条件变量
+		//if(pid != null && pid > 0 ){//如果有父节点
+		//	where = "where parent.id =?";//执行查询条件
+		//	params = new Integer[]{pid};//设置参数值
+		//}else{
+			where = "where parent is null";//查询根节点
+		//}
+		pageModel = categoryDao.find(pageNo,pageSize,where,params);//执行封装的查询方法
+		return LIST;//返回后台类别列表页面
+	}
+	
+	/**
+	 * 编辑类别
+	 * @return String
+	 * @throws Exception
+	 */
+	public String edit() throws Exception{
+		if(category.getId() != null && category.getId() > 0){
+			this.category = categoryDao.get(category.getId());
+		}
+		return EDIT;
+	}
+	
+	/**
+	 * 删除类别
+	 * @return String
+	 * @throws Exception
+	 */
+	public String del() throws Exception{
+		if(category.getId() != null && category.getId() > 0){//判断是否获得ID参数
+			categoryDao.delete(category.getId());//执行删除操作
+		}
+		return list();//返回商品类别列表的查找方法
+	}
+	
+	// 父类别id
+	//private Integer pid;
+	// 所有类别
+	private PageModel<CardCategory> pageModel;
+
+	//public Integer getPid() {
+	//	return pid;
+	//}
+
+	//public void setPid(Integer pid) {
+	//	this.pid = pid;
+	//}
+
+	public PageModel<CardCategory> getPageModel() {
+		return pageModel;
+	}
+
+	public CardCategory getCategory() {
+		return category;
+	}
+
+	public void setCategory(CardCategory category) {
+		this.category = category;
+	}
 	
 }
