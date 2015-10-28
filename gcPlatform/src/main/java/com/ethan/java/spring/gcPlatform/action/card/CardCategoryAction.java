@@ -1,5 +1,6 @@
 package com.ethan.java.spring.gcPlatform.action.card;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -18,7 +19,9 @@ import com.opensymphony.xwork2.ModelDriven;
 public class CardCategoryAction extends BaseAction implements ModelDriven<CardCategory>{
 	
 	private static final long serialVersionUID = 1L;
-	private CardCategory category = new CardCategory();
+	
+	@Autowired
+	private CardCategory category;
 	
 	@Override
 	public CardCategory getModel() {

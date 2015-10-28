@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 
+
 import com.ethan.java.spring.gcPlatform.dao.card.CardCategoryDao;
+import com.ethan.java.spring.gcPlatform.dao.card.CardsDao;
 //import com.ethan.java.spring.cards.dao.order.OrderDao;
 //import com.ethan.java.spring.cards.dao.product.ProductCategoryDao;
 //import com.ethan.java.spring.cards.dao.product.ProductDao;
@@ -86,8 +88,8 @@ public class BaseAction extends ActionSupport implements RequestAware,
 	// 注入Dao
 	@Autowired
 	protected CardCategoryDao categoryDao;
-	//@Autowired
-	//protected ProductDao productDao;
+	@Autowired
+	protected CardsDao cardsDao;
 	//@Autowired
 	//protected OrderDao orderDao;
 	@Autowired

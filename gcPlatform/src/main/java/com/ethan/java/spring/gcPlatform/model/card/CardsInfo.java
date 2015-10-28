@@ -4,11 +4,14 @@ import java.io.Serializable;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.springframework.stereotype.Component;
+
 
 /**
  * 商品信息
  * @author Yixing Cheng
  */
+@Component
 public class CardsInfo implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
