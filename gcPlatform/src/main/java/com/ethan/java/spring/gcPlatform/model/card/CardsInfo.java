@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
  * 商品信息
  * @author Yixing Cheng
  */
-@Component
 public class CardsInfo implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -27,7 +26,7 @@ public class CardsInfo implements Serializable{
 	private Integer clickcount = 1;// 访问量（统计受欢迎的程度）
 	private Integer sellCount = 0;// 销售数量（统计热销商品）
 	private CardCategory category;// 所属类别
-	private Set<CardInfo> cardinfos = new TreeSet<CardInfo>();
+	private Set<CardInfo> card = new TreeSet<CardInfo>();
 	//private UploadFile uploadFile;// 上传文件
     
 	public Integer getId() {
@@ -102,11 +101,11 @@ public class CardsInfo implements Serializable{
 	public void setCategory(CardCategory category) {
 		this.category = category;
 	}
-	public Set<CardInfo> getCardInfos() {
-		return cardinfos;
+	public Set<CardInfo> getCard() {
+		return card;
 	}
-	public void setCardInfos(Set<CardInfo> cardinfos) {
-		this.cardinfos = cardinfos;
+	public void setCard(Set<CardInfo> card) {
+		this.card = card;
 	}
 	//public UploadFile getUploadFile() {
 	//	return uploadFile;

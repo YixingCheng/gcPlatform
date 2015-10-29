@@ -333,8 +333,7 @@ public class CardsAction extends BaseAction implements ModelDriven<CardsInfo>{
 	*/
 	
 	// 商品对象
-	@Autowired
-	private CardsInfo cards;
+	private CardsInfo cards = new CardsInfo();
 	// 上传文件
 	//private File file;
 	// 所有类别

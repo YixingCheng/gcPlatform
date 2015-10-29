@@ -9,7 +9,7 @@
 		</id>
 		<property name="facevalue"/>
 		<property name="price"/>
-		<many-to-one name="cardsinfo" column="cardsinfoId"/>
+		<many-to-one name="cards" column="cardsinfoId"/>
 		<property name="createTime"/>
 		<property name="sellTime"/>
 		<property name="owner"/>

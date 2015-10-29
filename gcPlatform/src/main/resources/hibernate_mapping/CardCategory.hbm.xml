@@ -12,7 +12,7 @@
 		<property name="level"/>
 		-->
 		<!-- 映射包含的商品集合 -->
-		<set name="cardsinfo" inverse="true" lazy="extra">
+		<set name="cards" inverse="true" lazy="extra">
 			<key column="categoryId"/>
 			<one-to-many class="CardsInfo" />
 		</set>

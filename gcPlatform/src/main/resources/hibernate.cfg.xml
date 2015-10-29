@@ -29,13 +29,13 @@
 		
 		<mapping resource="hibernate_mapping/Admin.hbm.xml"/>
 		<mapping resource="hibernate_mapping/Customer.hbm.xml"/>
-		<!--
-		<mapping resource="com/ethan/java/spring/cards/model/product/ProductInfo.hbm.xml"/>
-		<mapping resource="com/ethan/java/spring/cards/model/product/ProductCategory.hbm.xml"/>
-		<mapping resource="com/ethan/java/spring/cards/model/product/UploadFile.hbm.xml"/>
 		
-		<mapping resource="com/ethan/java/spring/cards/model/order/Order.hbm.xml"/>
-		<mapping resource="com/ethan/java/spring/cards/model/order/OrderItem.hbm.xml"/>
-		-->
+		<mapping resource="hibernate_mapping/CardInfo.hbm.xml"/>
+		<mapping resource="hibernate_mapping/CardsInfo.hbm.xml"/>
+		<mapping resource="hibernate_mapping/CardCategory.hbm.xml"/>
+		
+		<mapping resource="hibernate_mapping/Order.hbm.xml"/>
+		<mapping resource="hibernate_mapping/OrderItem.hbm.xml"/>
+		
 	</session-factory>
 </hibernate-configuration>
