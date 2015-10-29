@@ -15,5 +15,18 @@
             </result>
         </action>
 	</package>
-	
+	<!-- CategoryAction -->
+	<package name="gcPlatform.category" extends="gcPlatform-default" namespace="/category">
+		<action name="category_*" class="com.ethan.java.spring.gcPlatform.action.card.CardCategoryAction" method="{1}">
+			<result name="all_list">/WEB-INF/pages/category/category_all_list.jsp</result>
+		</action>
+	</package>
+	<!-- CardAction -->
+	<package name="gcPlatform.cards" extends="gcPlatform-default" namespace="/cards">
+		<action name="cards_*" class="com.ethan.java.spring.gcPlatform.action.card.CardsAction" method="{1}">
+			
+			<result name="select">/WEB-INF/pages/product/product_select.jsp</result>
+			
+		</action>
+	</package>
 </struts>

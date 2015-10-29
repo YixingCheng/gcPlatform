@@ -1,5 +1,8 @@
 package com.ethan.java.spring.gcPlatform.action.card;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -57,16 +60,20 @@ public class CardCategoryAction extends BaseAction implements ModelDriven<CardCa
 	 * @throws Exception
 	 */
 	public String list() throws Exception{
-		Object[] params = null;//对象数组为空
-		String where;//查询条件变量
+		Map<String, String> orderby = new HashMap<String, String>();//定义Map集合
+		orderby.put("id", "asc");//为Map集合赋值
+		pageModel = categoryDao.find(1, 8, orderby );//执行查找方法
+		//return "clickList";//返回product_click_list.jsp页面
+		//Object[] params = null;//对象数组为空
+		//String where;//查询条件变量
 		//if(pid != null && pid > 0 ){//如果有父节点
 		//	where = "where parent.id =?";//执行查询条件
 		//	params = new Integer[]{pid};//设置参数值
 		//}else{
-			where = "where parent is null";//查询根节点
+		//	where = "where parent is null";//查询根节点
 		//}
-		pageModel = categoryDao.find(pageNo,pageSize,where,params);//执行封装的查询方法
-		return LIST;//返回后台类别列表页面
+		//pageModel = categoryDao.find(pageNo,pageSize,where,params);//执行封装的查询方法
+		return "all_list";//返回后台类别列表页面
 	}
 	
 	/**

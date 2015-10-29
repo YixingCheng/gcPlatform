@@ -24,7 +24,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 
 /**
- * 商品Action
+ * CardsAction
  * @author Yixing Cheng
  */
 @Scope("prototype")
