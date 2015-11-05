@@ -25,7 +25,7 @@
 	<package name="gcPlatform.cards" extends="gcPlatform-default" namespace="/cards">
 		<action name="cards_*" class="com.ethan.java.spring.gcPlatform.action.card.CardsAction" method="{1}">
 			
-			<result name="select">/WEB-INF/pages/product/product_select.jsp</result>
+			<result name="all_list">/WEB-INF/pages/cards/cards_all_list.jsp</result>
 			
 		</action>
 	</package>

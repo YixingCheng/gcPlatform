@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
  * 产品类别
  * @author Yixing Cheng
  */
+@Component
 public class CardCategory implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

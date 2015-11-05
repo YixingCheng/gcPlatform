@@ -3,7 +3,7 @@ package com.ethan.java.spring.gcPlatform.action.card;
 import java.util.HashMap;
 import java.util.Map;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -23,7 +23,8 @@ public class CardCategoryAction extends BaseAction implements ModelDriven<CardCa
 	
 	private static final long serialVersionUID = 1L;
 	
-	private CardCategory category = new CardCategory();
+	@Autowired
+	private CardCategory category;
 	
 	@Override
 	public CardCategory getModel() {

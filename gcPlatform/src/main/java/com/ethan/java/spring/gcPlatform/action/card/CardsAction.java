@@ -232,8 +232,8 @@ public class CardsAction extends BaseAction implements ModelDriven<CardsInfo>{
 	 * @throws Exception
 	 */
 	public String list() throws Exception{
-		pageModel = cardsDao.find(pageNo, pageSize);//调用公共的查询方法
-		return LIST;//返回后台商品列表页面
+		pageModel = cardsDao.find(pageNo, 16);//调用公共的查询方法
+		return "all_list"; 
 	}
 	
 	/**
@@ -333,7 +333,8 @@ public class CardsAction extends BaseAction implements ModelDriven<CardsInfo>{
 	*/
 	
 	// 商品对象
-	private CardsInfo cards = new CardsInfo();
+	@Autowired
+	private CardsInfo cards;
 	// 上传文件
 	//private File file;
 	// 所有类别

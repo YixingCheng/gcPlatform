@@ -12,6 +12,15 @@ td {
 	font-size: 12px;
 }
 -->
+ul{
+   display: block;
+}
+
+ul li{
+  display: inline;
+}
+
+
 </style>
 <nav class="navbar navbar-default">
   <div class="container-fluid">

@@ -1,0 +1,14 @@
+
+ul.product-sources {
+    margin: 0 0 0 -5%;
+    overflow: hidden;
+}
+
+ul.product-sources .product-source {
+    float: left;
+    margin: 0 0 3.5% 5%;
+    position: relative;
+    z-index: 1;
+    width: 20%;
+    height: 151px;
+}
