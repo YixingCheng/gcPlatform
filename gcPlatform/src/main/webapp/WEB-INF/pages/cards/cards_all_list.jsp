@@ -12,25 +12,25 @@
 			<div class="col-md-3">
 				<tr>
 					<td >
-					<s:a action="product_select" namespace="/product" >
+					<s:a action="cards_select" namespace="/cards" >
 						<s:param name="id" value="id"></s:param>
-						<!--  
-						<img width="150" height="150" src="<s:property value="#request.get('javax.servlet.forward.context_path')"/>/upload/<s:property value="uploadFile.path"/>">
-					    -->
+						 
+						<img width="150" height="150" src="<s:property value="#request.get('javax.servlet.forward.context_path')"/>/images/<s:property value="path"/>">
+					  
 					</s:a>
 					</td>
 				</tr>
 				<tr bgcolor="#f2eec9">
-					<td >商品名称：</td>
+					<td >Name：</td>
 					<td>
-					<s:a action="product_select" namespace="/product" >
+					<s:a action="cards_select" namespace="/cards" >
 						<s:param name="id" value="id"></s:param>
 						<s:property value="name" />
 					</s:a>
 					</td>
 				</tr>
 				<tr>
-					<td >价格：</td>
+					<td >Description：</td>
 					<td>
 						<s:property value="description"/>
 					</td>

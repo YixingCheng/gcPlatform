@@ -43,6 +43,7 @@ public class CardsAction extends BaseAction implements ModelDriven<CardsInfo>{
 			cards.setClickcount(cards.getClickcount() + 1);
 			cardsDao.update(cards);
 		}
+		//pageModel = cardsDao.find(pageNo, 16);//调用公共的查询方法
 		return SELECT;
 	}
 	

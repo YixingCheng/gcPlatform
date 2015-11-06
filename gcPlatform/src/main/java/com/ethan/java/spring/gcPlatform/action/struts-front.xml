@@ -26,7 +26,7 @@
 		<action name="cards_*" class="com.ethan.java.spring.gcPlatform.action.card.CardsAction" method="{1}">
 			
 			<result name="all_list">/WEB-INF/pages/cards/cards_all_list.jsp</result>
-			
+			<result name="select">/WEB-INF/pages/cards/card_all_list.jsp</result>
 		</action>
 	</package>
 </struts>

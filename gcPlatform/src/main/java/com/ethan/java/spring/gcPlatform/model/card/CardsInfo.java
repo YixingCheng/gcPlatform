@@ -27,6 +27,7 @@ public class CardsInfo implements Serializable{
 	private Integer clickcount = 1;// 访问量（统计受欢迎的程度）
 	private Integer sellCount = 0;// 销售数量（统计热销商品）
 	private CardCategory category;// 所属类别
+	private String path;
 	private Set<CardInfo> card = new TreeSet<CardInfo>();
 	//private UploadFile uploadFile;// 上传文件
     
@@ -114,5 +115,11 @@ public class CardsInfo implements Serializable{
 	//public void setUploadFile(UploadFile uploadFile) {
 	//	this.uploadFile = uploadFile;
 	//}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
 	
 }
