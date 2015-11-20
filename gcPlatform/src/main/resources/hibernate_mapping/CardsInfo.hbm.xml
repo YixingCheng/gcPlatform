@@ -26,7 +26,7 @@
 		<!-- 
 		<many-to-one name="uploadFile" unique="true" cascade="all" lazy="false"/>
 		-->
-		<set name="card" inverse="true" lazy="extra">
+		<set name="card" inverse="true" lazy="false">
 			<key column="cardsinfoId"/>
 			<one-to-many class="CardInfo" />
 		</set>

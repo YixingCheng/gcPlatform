@@ -91,6 +91,7 @@ public class CustomerAction extends BaseAction implements ModelDriven<Customer>{
 		return INDEX;
 	}
 	
+	
 	// 管理员
 	private Customer customer = new Customer();
 	// 确认密码

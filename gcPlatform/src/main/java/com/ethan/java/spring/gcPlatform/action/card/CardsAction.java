@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -31,6 +32,7 @@ import com.opensymphony.xwork2.ModelDriven;
 @Controller("cardsAction")
 public class CardsAction extends BaseAction implements ModelDriven<CardsInfo>{
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = Logger.getLogger(CardsAction.class);
 	
 	/**
 	 * 根据id查看商品信息(查看后更新人气点击次数)
@@ -38,8 +40,13 @@ public class CardsAction extends BaseAction implements ModelDriven<CardsInfo>{
 	 * @throws Exception
 	 */
 	public String select() throws Exception {
-		if(cards.getId() != null && cards.getId() > 0){
+		
+		//System.out.println("cards");
+		
+		if(cards.getId() != null && cards.getId() >= 0){
 			cards = cardsDao.get(cards.getId());
+			logger.info(cards.getCard().size());
+			
 			cards.setClickcount(cards.getClickcount() + 1);
 			cardsDao.update(cards);
 		}
@@ -389,5 +396,15 @@ public class CardsAction extends BaseAction implements ModelDriven<CardsInfo>{
 	public void setPageModel(PageModel<CardsInfo> pageModel) {
 		this.pageModel = pageModel;
 	}
+
+	public CardsInfo getCards() {
+		return cards;
+	}
+
+	public void setCards(CardsInfo cards) {
+		this.cards = cards;
+	}
+	
+	
 
 }

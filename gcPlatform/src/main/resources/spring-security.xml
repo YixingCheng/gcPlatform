@@ -8,7 +8,9 @@
   
     <http auto-config="true">
         <intercept-url pattern="/customer*" access="ROLE_CUSTOMER" />
-          
+        <intercept-url pattern="/cards/*" access="ROLE_CUSTOMER" />
+        <intercept-url pattern="/cards*" access="ROLE_CUSTOMER" />
+        <intercept-url pattern="/cards/**" access="ROLE_CUSTOMER" />
          
         <access-denied-handler error-page="/WEB-INF/pages/403.jsp" />
          
